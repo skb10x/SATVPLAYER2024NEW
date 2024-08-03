@@ -3,16 +3,17 @@ const container = document.querySelector(".container"),
   videoTimeline = container.querySelector(".video-timeline"),
   progressBar = container.querySelector(".progress-bar"),
   volumeBtn = container.querySelector(".volume i"),
-  volumeSlider = container.querySelector(".left input");
-(currentVidTime = container.querySelector(".current-time")),
-  (videoDuration = container.querySelector(".video-duration")),
-  (skipBackward = container.querySelector(".skip-backward i")),
-  (skipForward = container.querySelector(".skip-forward i")),
-  (playPauseBtn = container.querySelector(".play-pause i")),
-  (speedBtn = container.querySelector(".playback-speed span")),
-  (speedOptions = container.querySelector(".speed-options")),
-  (pipBtn = container.querySelector(".pic-in-pic span")),
-  (fullScreenBtn = container.querySelector(".fullscreen i"));
+  volumeSlider = container.querySelector(".left input"),
+  currentVidTime = container.querySelector(".current-time"),
+  videoDuration = container.querySelector(".video-duration"),
+  skipBackward = container.querySelector(".skip-backward i"),
+  skipForward = container.querySelector(".skip-forward i"),
+  playPauseBtn = container.querySelector(".play-pause i"),
+  speedBtn = container.querySelector(".playback-speed span"),
+  speedOptions = container.querySelector(".speed-options"),
+  pipBtn = container.querySelector(".pic-in-pic span"),
+  fullScreenBtn = container.querySelector(".fullscreen i");
+
 let timer;
 
 const hideControls = () => {
@@ -21,13 +22,14 @@ const hideControls = () => {
     container.classList.remove("show-controls");
   }, 3000);
 };
-hideControls();
 
-container.addEventListener("mousemove", () => {
+const showControls = () => {
   container.classList.add("show-controls");
   clearTimeout(timer);
   hideControls();
-});
+};
+
+container.addEventListener("mousemove", showControls);
 
 const formatTime = (time) => {
   let seconds = Math.floor(time % 60),
@@ -147,3 +149,6 @@ videoTimeline.addEventListener("mousedown", () =>
 document.addEventListener("mouseup", () =>
   videoTimeline.removeEventListener("mousemove", draggableProgressBar)
 );
+
+// Hide controls initially
+hideControls();
