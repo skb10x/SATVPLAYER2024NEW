@@ -28,16 +28,17 @@
   align-items: center;
   justify-content: center;
 }
+
 .container {
+  width: 98%;
   user-select: none;
   overflow: hidden;
+  max-width: 900px;
   border-radius: 8px;
   background: #000;
   aspect-ratio: 16 / 9;
   position: relative;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  width: 1920px;
-  height: 1080px;
 }
 
 .container.fullscreen {
@@ -194,7 +195,6 @@
 
 .options .video-timer {
   color: #efefef;
-  background: #ff003c;
   margin-left: 15px;
   font-size: 14px;
 }
