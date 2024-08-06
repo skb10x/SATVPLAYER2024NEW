@@ -41,27 +41,6 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-video::-webkit-media-controls {
-    writing-mode: horizontal-tb;
-	max-width: 2000px;
-	width: 1920px;
-	height: 1080px;
-    direction: ltr;
-    display: flex;
-    flex-direction: column;
-    font-family: Roboto, Noto, sans-serif;
-    color: rgb(0, 0, 0);
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 14px;
-    margin-top: env(safe-area-inset-top);
-    margin-left: env(safe-area-inset-left);
-    margin-right: env(safe-area-inset-right);
-    margin-bottom: env(safe-area-inset-bottom);
-    contain: paint !important;
-    --gradient-steps: hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.013) 8.1%, hsla(0, 0%, 0%, 0.049) 15.5%, hsla(0, 0%, 0%, 0.104) 22.5%, hsla(0, 0%, 0%, 0.175) 29%, hsla(0, 0%, 0%, 0.259) 35.3%, hsla(0, 0%, 0%, 0.352) 41.2%, hsla(0, 0%, 0%, 0.45) 47.1%, hsla(0, 0%, 0%, 0.55) 52.9%, hsla(0, 0%, 0%, 0.648) 58.8%, hsla(0, 0%, 0%, 0.741) 64.7%, hsla(0, 0%, 0%, 0.825) 71%, hsla(0, 0%, 0%, 0.896) 77.5%, hsla(0, 0%, 0%, 0.951) 84.5%, hsla(0, 0%, 0%, 0.987) 91.9%, hsl(0, 0%, 0%) 100%;
-}
-
 .container.fullscreen {
   max-width: 100%;
   width: 100%;
@@ -216,6 +195,7 @@ video::-webkit-media-controls {
 
 .options .video-timer {
   color: #efefef;
+  background: #ff003c;
   margin-left: 15px;
   font-size: 14px;
 }
@@ -280,8 +260,12 @@ video::-webkit-media-controls {
 
 .container
   video {
-  width: 100%;
+  max-width: 2000px;
+  width: 1920px;
+  max-height: 2000px;
+  height: 1080px;
 }
+
   @media screen and (max-width: 540px) {
   .wrapper .video-controls {
     padding: 3px 10px 7px;
@@ -364,6 +348,10 @@ body,
   aspect-ratio: 16 / 9;
   position: relative;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 2000px;
+  width: 1920px;
+  max-height: 2000px;
+  height: 1080px;
 }
 
 .container.fullscreen {
@@ -573,7 +561,11 @@ body,
 }
 
 .container video {
-  width: 100%;
+  video {
+  max-width: 2000px;
+  width: 1920px;
+  max-height: 2000px;
+  height: 1080px;
 }
 
 @media screen and (max-width: 540px) {
