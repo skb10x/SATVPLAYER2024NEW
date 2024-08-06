@@ -147,3 +147,39 @@ videoTimeline.addEventListener("mousedown", () =>
 document.addEventListener("mouseup", () =>
   videoTimeline.removeEventListener("mousemove", draggableProgressBar)
 );
+// Pausar y reanudar el video al hacer clic en el centro
+mainVideo.addEventListener("click", () => {
+  if (mainVideo.paused) {
+    mainVideo.play();
+  } else {
+    mainVideo.pause();
+  }
+});
+
+// Controlar el video con las flechas del teclado
+document.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "ArrowLeft":
+      mainVideo.currentTime -= 5; // Retrocede 5 segundos
+      break;
+    case "ArrowRight":
+      mainVideo.currentTime += 5; // Avanza 5 segundos
+      break;
+  }
+});
+  function addCSSPrefixes() {
+    var styles = [
+      '@-webkit-keyframes spin { 0% { transform: rotate(360deg); } }',
+      '@-moz-keyframes spin { 0% { transform: rotate(360deg); } }',
+      '@-ms-keyframes spin { 0% { transform: rotate(360deg); } }',
+      '@-o-keyframes spin { 0% { transform: rotate(360deg); } }',
+      '@keyframes spin { 0% { transform: rotate(360deg); } }',
+    ];
+
+    var styleSheet = document.createElement('style');
+    styleSheet.type = 'text/css';
+    styleSheet.innerText = styles.join(' ');
+    document.head.appendChild(styleSheet);
+  }
+
+  window.onload = addCSSPrefixes;
